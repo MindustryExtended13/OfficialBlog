@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../style.css">
+<div class="header">
+    <img src="../graphics/icon.png" alt="">
+    <h1>MindustryExtended13 Blog</h1>
+</div>
+<div class="dec">
+    <div class="line" style="background-color: darkblue;"></div>
+    <div class="line" style="background-color: darkgoldenrod;"></div>
+</div>
+<br>
+<br>
+<br>
+<div class="contpad">
+    <div class="content panel">
+        <button><a href="../index.html">To main page</a></button>
+        Posted by TheEE145 at 03/05/2024
+    </div>
+    <br>
+    <div class="content main">
+        <h1>Space exploration inventory system</h1>
+        <p>Hello! today this post will be about SE early multiplayer-supported inventory system</p>
+        <p>The inventory system will rework vanilla mechanics of building and cargo</p>
+        <img src="../graphics/pages/inventory-blueprint.png" alt="Inventory basic system blueprint">
+        <p>I think the best idea to make this system is using window class because it's will be large</p>
+        <p>By default in inventory acceptable only 35 slots you can expand using tech or dark magic of addons</p>
+        <p>Unit that controlled by player now can't have cargo. All cargo will be removed and added to inventory</p>
+        <p>In future the building fragment in hud group will be hidden and never used because you need craft items by hand</p>
+        <p>The default size of items is 200!</p>
+        <img src="../graphics/pages/inventory-simple.png" alt="Inventory in game demonstration"><br>
+        <p>The inventory stored in global variable if campaign and in unit otherwise</p>
+        <p>SE don't support campaign and multiplayer at the same time!</p>
+        <h2>Multiplayer realisation of mod</h2>
+        <p>The multiplayer part of the system was hard but solution found: store data in unit as uuid, not for id</p>
+        <p>When player joins to the SE server, he's send package that contains JSON string of generated inventory</p>
+        <p>Player can change inventory using sync package that transfer JSON string of inventory to the server</p>
+        <p>The hardest part it's fix item cargo handler because it's faster than package sends</p>
+        <p>The solution is adding cooldown by 60 seconds and if you not host (headless/head) wait when SeItemDrop package will be processed</p>
+        <img src="../graphics/pages/inventory-multiplayer-simple.png" alt="Inventory in game demonstration (multiplayer)" style="width: 75%;">
+        <br>
+        <br>
+        <br>
+        <h2>The post will be edited in future to add more content</h2>
+    </div>
+</div>
+<br>
+<br>
+<br>

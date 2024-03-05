@@ -125,3 +125,7 @@ body {
     height: 100%;
     display: inline;
 }
+
+.main > img {
+    width: 35%;
+}
